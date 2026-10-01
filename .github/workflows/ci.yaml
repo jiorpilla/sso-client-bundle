@@ -14,13 +14,11 @@ jobs:
         include:
           - php: '8.4'
             symfony: '8.1.*'
-          - php: '8.4'
-            symfony: '7.4.*'
 
     name: PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:

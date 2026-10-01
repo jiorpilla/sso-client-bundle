@@ -10,7 +10,7 @@ Sign in to a Symfony app through [the SSO](https://github.com/jiorpilla/sso) (or
 - Optional **bearer-token authentication** for APIs
 - Users kept only in the session, or **synced to your own users table**
 
-Requires PHP 8.4+ and Symfony 7.4 or 8.x.
+Requires PHP 8.4+ and Symfony 8.1+.
 
 ## Install
 
