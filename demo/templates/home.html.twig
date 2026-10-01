@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Demo App 1</title></head>
+<body>
+    <h1>Demo App 1</h1>
+    <p id="who">Signed in as {{ app.user.name }} ({{ app.user.email }})</p>
+    <p id="roles">Roles: {{ app.user.roles|join(', ') }}</p>
+    <p id="sub">SSO user ID: {{ subject }}</p>
+    <p id="token">Access token available: {{ has_access_token ? 'yes' : 'no' }}</p>
+    <p><a href="{{ path('sso_client_logout') }}">Sign out</a></p>
+</body>
+</html>

@@ -1,0 +1,2 @@
+sso_client:
+    resource: '@SsoClientBundle/config/routes.php'

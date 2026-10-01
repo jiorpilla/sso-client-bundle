@@ -1,0 +1,18 @@
+security:
+    providers:
+        sso:
+            id: sso_client.user_provider
+    firewalls:
+        dev:
+            pattern: ^/(_profiler|_wdt|assets|build)/
+            security: false
+        main:
+            lazy: true
+            provider: sso
+            custom_authenticators: [sso_client.authenticator]
+            entry_point: sso_client.authenticator
+            logout:
+                path: sso_client_logout
+    access_control:
+        - { path: ^/sso/, roles: PUBLIC_ACCESS }
+        - { path: ^/, roles: ROLE_USER }
