@@ -12,13 +12,18 @@ services:
   app1-nginx:
     image: nginx:1.28-alpine
     ports:
-      - "8443:443"
+      - "8443:8443"
     volumes:
       - ../:/app:ro
       - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - ${SSO_CERTS_DIR:-../../sso/docker/nginx/certs}:/etc/nginx/certs:ro
     depends_on:
       - app1-php
+    networks:
+      default:
+        # Lets the SSO reach https://app1.local:8443 server-to-server (back-channel logout)
+        aliases:
+          - app1.local
 
 networks:
   default:

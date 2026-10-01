@@ -257,3 +257,13 @@ vendor/bin/php-cs-fixer fix --dry-run --diff
 ```
 
 Not using Symfony? See [docs/non-symfony.md](docs/non-symfony.md).
+
+## Troubleshooting
+
+| Problem | Cause / fix |
+|---|---|
+| A new SSO feature (e.g. logout) isn't used | The discovery document is cached for `cache_ttl` (1 hour). `cache:clear` does **not** empty it: run `php bin/console cache:pool:clear cache.app` (or your `sso_client.cache` pool). |
+| "Invalid issuer" | `SSO_ISSUER` must match the SSO's `issuer` exactly, including no trailing slash. |
+| `redirect_uri` error page on the SSO | The callback URL (scheme, host, port, path) must be registered on the SSO client exactly. |
+| Tokens rejected right after login | Server clocks differ by more than `leeway` (30s). Sync the clock (NTP). |
+| TLS errors locally | The app container must trust the SSO's local CA (see `demo/`). |
