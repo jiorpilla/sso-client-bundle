@@ -4,7 +4,7 @@ A minimal Symfony app that signs in through the local SSO with this bundle (inst
 path repository). Used to test the whole flow end to end.
 
 Requires the SSO stack running (`cd ~/dev/sso && make up`): the demo joins its Docker network, reaches
-it at `https://sso.local`, and reuses its local certificates (which already cover `app1.local`).
+it at `https://sso-local.janivanorpilla.com`, and reuses its local certificates (which already cover `app1.local`).
 
 ```bash
 # 1. Hosts entry (once)
@@ -16,7 +16,7 @@ docker compose exec php php bin/console app:client:create "Demo App 1" --redirec
 
 # 3. demo/.env.local (gitignored)
 DEFAULT_URI=https://app1.local:8443
-SSO_ISSUER=https://sso.local
+SSO_ISSUER=https://sso-local.janivanorpilla.com
 SSO_CLIENT_ID=...
 SSO_CLIENT_SECRET=...
 

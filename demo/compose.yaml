@@ -1,6 +1,6 @@
 # Demo app for end-to-end testing against a local SSO.
 # Requires the SSO stack (~/dev/sso, `make up`) to be running: this joins its network,
-# reaches it at https://sso.local, and reuses its local certificates.
+# reaches it at https://sso-local.janivanorpilla.com, and reuses its local certificates.
 services:
   app1-php:
     image: sso-php

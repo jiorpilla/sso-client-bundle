@@ -6,7 +6,7 @@ The SSO is a standard OpenID Connect provider, so any certified OpenID Connect c
 
 | Setting | Value |
 |---|---|
-| Issuer / discovery | `https://sso.janivanorpilla.com` (locally `https://sso.local`). Discovery document: `{issuer}/.well-known/openid-configuration`. Let the library read every endpoint from it. |
+| Issuer / discovery | `https://sso.janivanorpilla.com` (locally `https://sso-local.janivanorpilla.com`). Discovery document: `{issuer}/.well-known/openid-configuration`. Let the library read every endpoint from it. |
 | Flow | Authorization Code (`response_type=code`) |
 | PKCE | Required, `S256` only |
 | `state` | Required: random, single use, checked on return |

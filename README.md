@@ -54,7 +54,7 @@ SSO_CLIENT_ID=the-client-id
 SSO_CLIENT_SECRET=the-client-secret
 ```
 
-Locally: `SSO_ISSUER=https://sso.local`.
+Locally: `SSO_ISSUER=https://sso-local.janivanorpilla.com`.
 
 ### 4. Import the routes
 
